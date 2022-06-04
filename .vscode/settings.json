@@ -1,0 +1,5 @@
+{
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.colorDecorators": true,
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+}
