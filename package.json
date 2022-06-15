@@ -5,7 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node/ackend server.js"
+    "start": "node backend/server.js",
+    "server":"nodemon backend/server.js",
+    "client":"npm start --prefix frontend",
+    "dev":"concurrently \"npm run server\"\"npm run client\"",
+
+    "data:import":"node backend/seeders",
+    "data:delete":"node backend/seeders -d"
+
   },
   "repository": {
     "type": "git",
@@ -19,5 +26,9 @@
   "homepage": "https://github.com/AnnyOK/Afiamart-shiny-guacamole#readme",
   "dependencies": {
     "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "nodemon": "^2.0.16"
   }
 }

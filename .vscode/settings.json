@@ -1,5 +1,6 @@
 {
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.colorDecorators": true,
-    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode",
+    "liveServer.settings.port": 5501
 }
