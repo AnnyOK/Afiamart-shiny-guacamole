@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { listProducts } from '../actions/productAction.js'
 import Loader from "../components/Loader.js"
 import Message from '../components/Message.js'
+
+
 function HomeScreen() {
   const dispatch = useDispatch()
   const productList = useSelector((state) => state.productList)

@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { listProductDetails } from '../actions/productAction.js'
 import Loader from '../components/Loader.js'
 import Message from '../components/Message.js'
-import axios from 'axios'
+// import axios from 'axios'
 import { useParams,useNavigate,Link } from 'react-router-dom'
 
 const ProductScreen = (history) => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [qty, setQty] = useState(1)
-  console.log(id)
+  // console.log(id)
   const dispatch = useDispatch()
 
   const productDetails = useSelector((state) => state.productDetails)
@@ -20,7 +20,9 @@ const ProductScreen = (history) => {
 
   useEffect(() => {
     dispatch(listProductDetails(id))
-  }, [dispatch])
+  }, [dispatch,id])
+
+  
   const addToCartHandler=()=>{
 navigate(`/cart/${id}?qty=${qty}`)
   }
@@ -45,7 +47,7 @@ navigate(`/cart/${id}?qty=${qty}`)
               </ListGroup.Item>
               <ListGroup.Item>
                 <Rating
-                  value={product.rating}
+                  value={product.rating||0}
                   text={`${product.numReviews} reviews`}
                 />
               </ListGroup.Item>

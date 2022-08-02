@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useParams, useNavigate, useLocation } from 'react-router-dom'
+import { Link, useParams, useNavigate, useLocation, Navigate} from 'react-router-dom'
 import Message from '../components/Message'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
-import { addToCart } from '../actions/cartActions'
+import { addToCart,removeFromCart, } from '../actions/cartActions'
+
+// import {createBrowserHistory} from 'history'
+
+
 function CartScreen() {
+  const userInfo = localStorage.getItem('userInfo')
   const { id } = useParams()
   const productId = id
-  console.log(productId)
+// const {history} = createBrowserHistory()
   const history = useNavigate()
   const location = useLocation()
   const dispatch = useDispatch()
@@ -22,16 +27,21 @@ function CartScreen() {
   }, [dispatch, productId, qty])
 
   const removeFromCartHandler = (id) => {
-    console.log('remove')
-  }
+dispatch(removeFromCart(id))  }
   const checkoutHandler=()=>{
-      history.push("/login?redirect=shipping")
+    if(!userInfo){
+      history('/login')
+    }else{
+      history('/shipping')
+    }
+// history('/login?redirect=/shipping')
+      // history.push('/login?redirect=shipping')
   }
   return (
     <Row>
       <Col md={8}>
         <h1>Shopping Cart</h1>
-        {cartItems.length == 0 ? (
+        {cartItems.length === 0 ? (
           <Message>
             Your cart is empty<Link to="/">Go back</Link>
           </Message>
