@@ -1,3 +1,4 @@
+import { response } from 'express'
 import asyncHandler from 'express-async-handler'
 import User from '../models/userModels.js'
 import generateToken from '../utils/generateToken.js'
@@ -21,7 +22,8 @@ export const authUser = asyncHandler(async (req, res) => {
       throw new Error('invalid email or password')
     }
   } catch (err) {
-    console.log(err)
+res.status(500)
+throw new Error('something went wrong')
   }
 })
 
@@ -48,7 +50,6 @@ export const getUserProfile = asyncHandler(async (req, res) => {
 //@ route: Put api/users/profile
 //@access private
 export const updateUserProfile = asyncHandler(async (req, res) => {
-  console.log(req)
 
   const user = await User.findById(req.user._id)
   if (user) {
@@ -98,5 +99,65 @@ export const registerUser = asyncHandler(async (req, res) => {
   }else{
       res.status(400)
       throw new Error('Invalid user data')
+  }
+})////
+//
+//
+
+//@desc GET all user
+//@ route: GET api/users
+//@access private/Admin
+export const getAllUsers = asyncHandler(async (req, res) => {
+  const user = await User.find({})
+    res.json({ user})  
+})
+
+
+//@desc GET user by id
+//@ route: GET api/users/:id
+//@access private/Admin
+export const getUserById = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id).select("-password")
+  if(user){
+    res.json({ user})  
+  }else{
+    res.status(404)
+    throw new Error("User not found")
+  }
+})
+
+
+//@desc delete a user
+//@ route: Delete api/users/:id
+//@access private/Admin
+export const deleteUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id)
+  if (user) { 
+await user.remove()
+res.json({message:"User removed"})
+  }else{
+    res.status(404)
+    throw new Error(`User not found`)
+  }
+})
+
+//@desc update user
+//@ route: Put api/users/:id
+//@access private/admin
+export const updateUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id)
+  if (user) {
+    user.isAdmin=!user.isAdmin
+    const updatedUser= await user.save()
+    
+    res.status(200).json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+    })
+  } else {
+    res.status(404)
+    throw new Error('User not found')
   }
 })

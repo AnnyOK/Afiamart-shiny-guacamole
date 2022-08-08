@@ -8,25 +8,22 @@ import {saveShippingAddress} from '../actions/cartActions'
 
 
 function ShippingScreen() {
-    console.log(useSelector(state=>state))
     const cart = useSelector(state=>state.cart)
     const {shippingAddress} = cart
-console.log(localStorage.getItem('shippingAddress'))
-console.log(shippingAddress)
 
     const navigate = useNavigate()
 
-    // const [address, setAddress] = useState(shippingAddress.address)
-    // const [city, setCity] = useState(shippingAddress.city)
-    // const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
-    // const [country, setCountry] = useState(shippingAddress.country)
+    const [address, setAddress] = useState(shippingAddress.address)
+    const [city, setCity] = useState(shippingAddress.city)
+    const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
+    const [country, setCountry] = useState(shippingAddress.country)
 
 
 
-    const [address, setAddress] = useState("")
-    const [city, setCity] = useState("")
-    const [postalCode, setPostalCode] = useState("")
-    const [country, setCountry] = useState("")
+    // const [address, setAddress] = useState("")
+    // const [city, setCity] = useState("")
+    // const [postalCode, setPostalCode] = useState("")
+    // const [country, setCountry] = useState("")
 
 
     const dispatch = useDispatch()

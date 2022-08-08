@@ -1,0 +1,30 @@
+import React from 'react';
+import { Pagination, Paginations } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+
+function Paginate({ pages, page, isAdmin, keyword = '' }) {
+    return pages > 1 && (
+        <Pagination>
+            {
+                [...Array(pages).keys()].map(x => (
+                    <LinkContainer
+                        key={x + 1}
+                        to={!isAdmin 
+                            ? keyword
+                            ? `/search/${keyword}/page${x + 1}`
+                            : `/page/${x + 1}`
+                            : `/admin/productslist/${x+1}`}>
+                        <Pagination.Item
+                        style={{ active:{background:'green'}}}
+                            active={x + 1 === page}
+                            >
+                            {x + 1}
+                        </Pagination.Item>
+                    </LinkContainer>
+                ))
+            }
+        </Pagination>
+    );
+}
+
+export default Paginate;

@@ -14,4 +14,27 @@ h2{
 }
 .rating span{
     margin:0.1rem
+
+ }
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item
+.active {
+position:absolute;
+top:0;
+}  
+.carousel-caption h2 {
+    color:green;
 }
+.carousel img{
+    display: flex;
+    height: 350px;
+    padding: 15px;
+    margin:30px;
+    border-radius: 15%;
+}
+.carousel a {
+    margin:0 auto;
+}
+
