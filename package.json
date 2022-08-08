@@ -16,7 +16,7 @@
 
     "data:import":"node backend/seeders",
     "data:delete":"node backend/seeders -d",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false cd Backend && npm install --prefix && cd .. && cd frontend && npm install --prefix --force  && npm run build --prefix "
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false cd Backend && npm install --prefix && cd .. && cd frontend && npm install --prefix  && npm run build --prefix "
 
 
   },
