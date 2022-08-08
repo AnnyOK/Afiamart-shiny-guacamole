@@ -13,7 +13,6 @@ import ProductsCarosel from '../components/ProductsCarosel'
 
 function HomeScreen() {
   const {keyword,page} = useParams()
-  console.log(useParams())
   const dispatch = useDispatch()
   const productList = useSelector((state) => state.productList)
   const { loading, error, products,pageNumber,pages } = productList
@@ -21,7 +20,6 @@ function HomeScreen() {
   useEffect(() => {
     dispatch(listProducts(keyword,page))
   }, [dispatch,keyword,page])
-   console.log(products)
 
   return (
     <>

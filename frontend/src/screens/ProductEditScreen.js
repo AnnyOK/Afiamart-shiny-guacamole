@@ -75,14 +75,11 @@ function ProductEditScreen() {
                     'Content-type': 'multipart/form-data'
                 }
             }
-            console.log(myFormData.get('image'))
             const { data } = await axios.post('https://api/cloudinary.com/v2/drho9mnyb/image/upload', myFormData,config)
             // const { data } = await axios.post('/api/uploads', myFormData, config)
-            console.log(data)
             setImage(data)
             setUploading(false)
         } catch (error) {
-            console.error(error)
             setUploading(false)
         }
 

@@ -50,7 +50,6 @@ function ProfileScreen() {
     }, [dispatch, history, userInfo, user,success])
 
     const submitHandler = (e) => {
-    console.log('This happened')
         e.preventDefault()
         if (password !== comfirmPassword) {
             setMessage('Password do not match')
