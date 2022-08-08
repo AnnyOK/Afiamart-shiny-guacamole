@@ -10,7 +10,7 @@
     "start": "node server.js",
     "data:import": "node Backend/seeders.js",
     "data:delete": "node Backend/seeders.js -d",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Okpala Anayo",
   "license": "ISC",
