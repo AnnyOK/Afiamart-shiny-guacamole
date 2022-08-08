@@ -1,6 +1,10 @@
 {
   "name": "data",
   "version": "1.0.0",
+  "engines":{
+    "node":"18.1.0",
+    "npm":"8.8.0"
+  },
   "description": "backend for afiamart",
   "main": "server.js",
   "type": "module",
