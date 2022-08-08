@@ -5,14 +5,12 @@ import Message from '../components/Message'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import { addToCart,removeFromCart, } from '../actions/cartActions'
 
-// import {createBrowserHistory} from 'history'
 
 
 function CartScreen() {
   const userInfo = localStorage.getItem('userInfo')
   const { id } = useParams()
   const productId = id
-// const {history} = createBrowserHistory()
   const history = useNavigate()
   const location = useLocation()
   const dispatch = useDispatch()
@@ -34,8 +32,6 @@ dispatch(removeFromCart(id))  }
     }else{
       history('/shipping')
     }
-// history('/login?redirect=/shipping')
-      // history.push('/login?redirect=shipping')
   }
   return (
     <Row>
