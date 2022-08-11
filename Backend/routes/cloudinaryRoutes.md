@@ -1,4 +1,4 @@
-import uploads from './cloudinary.js'
+import {upload} from './cloudinary.js'
 import express, { response } from  'express'
 import path from 'path'
 
@@ -8,7 +8,7 @@ const router = express.Router()
 
 
 
-router.post('/',uploads.single('image'),async(req,res)=>{
+router.post('/',upload.single('image'),async(req,res)=>{
     try{
         const uploader = async(path)=>await cloudinary.uploads(path,"Images")
 

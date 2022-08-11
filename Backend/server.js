@@ -8,7 +8,8 @@ import connectDB from "./config/db.js"
 import productRoutes from "./routes/productRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
 import  orderRoutes from "./routes/orderRoutes.js"
-import uploadRoutes from "./routes/uploadRoutes.js"   
+import uploadcloud from "./routes/uploadcloud.js"   
+import cloud from "./routes/cloud.js"   
 import{notFound,errorHandler} from './middleware/errorMiddleware.js'
 import fileUpload from "express-fileupload"
 import { v2 as cloudinary} from 'cloudinary'
@@ -33,7 +34,8 @@ connectDB()
 app.use('/api/products',productRoutes);
 app.use('/api/users',userRoutes);
 app.use('/api/orders',orderRoutes);
-app.use('/api/uploads',uploadRoutes)
+app.use('/api/upload',uploadcloud)
+app.use('/api/uploads',cloud)
 app.get('/api/config/paypal', (req,res)=>res.send(process.env.PAYPAL_CLIENT_ID))
 
 const __dirname = path.resolve()

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
+import { CloudinaryContext, Image } from 'cloudinary-react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Form, Button, } from "react-bootstrap"
 import { useDispatch, useSelector } from 'react-redux'
@@ -32,12 +33,7 @@ function ProductEditScreen() {
 
     const productUpdate = useSelector(state => state.productUpdate)
     const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = productUpdate
-    // const userUpdate = useSelector(state => state.userUpdate)
-    // const {
-    //      loading:loadingUpdate,
-    //      error:errorUpdate,
-    //       success:successUpdate
-    //     } = userUpdate
+
 
     useEffect(() => {
         if (successUpdate) {
@@ -63,21 +59,24 @@ function ProductEditScreen() {
 
     const uploadFileHandler = async (e) => {
         const file = e.target.files[0]
+        const signatureResponse = await axios.get('/api/upload/get-signature')
         const myFormData = new FormData()
         myFormData.append('image', file)
-        myFormData.append('upload_preset', 'zwiyfst6')
-        myFormData.append('cloud_name', "drho9mnyb")
+
         setUploading(true)
 
         try {
             const config = {
                 headers: {
                     'Content-type': 'multipart/form-data'
+                },
+                onUploadProgress: function (e) {
+                    console.log(e.loaded / e.total)
                 }
             }
-            const { data } = await axios.post('https://api/cloudinary.com/v2/drho9mnyb/image/upload', myFormData,config)
+            const {data} = await axios.post('https://afiamart-cloud.herokuapp.com/solitary', myFormData)
             // const { data } = await axios.post('/api/uploads', myFormData, config)
-            setImage(data)
+            setImage(data.secure_url)
             setUploading(false)
         } catch (error) {
             setUploading(false)
@@ -146,10 +145,11 @@ function ProductEditScreen() {
                                     label="Choose image"
                                     // custom
                                     onChange={uploadFileHandler}
-                                />
-                                {uploading && <Loader />}
+                                ></Form.Control >
+                                    {uploading && <Loader />}
                             </Form.Group>
 
+                            
                             {/* 
                             <Form.Group controlId='image'>
                                 <Form.Label>Image</Form.Label>
