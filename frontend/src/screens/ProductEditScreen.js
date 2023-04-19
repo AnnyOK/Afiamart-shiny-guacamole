@@ -59,7 +59,7 @@ function ProductEditScreen() {
 
     const uploadFileHandler = async (e) => {
         const file = e.target.files[0]
-        const signatureResponse = await axios.get('/api/upload/get-signature')
+        // const signatureResponse = await axios.get('/api/upload/get-signature')
         const myFormData = new FormData()
         myFormData.append('image', file)
 
@@ -74,7 +74,8 @@ function ProductEditScreen() {
                     console.log(e.loaded / e.total)
                 }
             }
-            const {data} = await axios.post('https://afiamart-cloud.herokuapp.com/solitary', myFormData)
+            // const {data} = await axios.post('https://afiamart-cloud.herokuapp.com/solitary', myFormData)
+            const {data} = await axios.post('/api/uploads/cloud', myFormData)
             // const { data } = await axios.post('/api/uploads', myFormData, config)
             setImage(data.secure_url)
             setUploading(false)
@@ -191,7 +192,7 @@ function ProductEditScreen() {
                                 <Form.Label>Count In Stock</Form.Label>
                                 <Form.Control type='number'
                                     value={countInStock}
-                                    onChange={(e) => setName(e.target.value)}
+                                    onChange={(e) => setCountInStock(e.target.value)}
                                 ></Form.Control>
                             </Form.Group>
 

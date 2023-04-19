@@ -21,6 +21,7 @@ function ProductListScreen() {
 
     const productList = useSelector(state => state.productList)
     const { loading, error, products, pages, pageNumber } = productList
+    console.log('productlist',productList)
 
 
     const productDelete = useSelector(state => state.productDelete)
@@ -123,6 +124,7 @@ function ProductListScreen() {
                             </tbody>
 
                         </Table>
+                       {console.log('page',pageNumber,'pages',pages)}
                         <Paginate page={pageNumber} pages={pages} isAdmin={true}/>
                     </>
                 )}

@@ -1,18 +1,24 @@
 import express from 'express'
 import {v2 as cloudinary} from 'cloudinary'
 import dotenv from 'dotenv'
+import fs from 'fs';
 const router = express.Router()
-console.log(cloudinary.config().cloud_name)
-
 dotenv.config()
+console.log("cloud name",cloudinary.config().cloud_name)
 router.post('/cloud',async(req,res)=>{
+    console.log(cloudinary.config())
+    console.log('filess',req.files.image.tempFilePath )
     try{
-        
-        const imgpath= "//Users/okpalaanayo/Desktop/blueclock.png"
-        req.body.image
-         cloudinary.uploader.upload(imgpath,{resource_type:"image",}).then((response)=>res.json(response))
-        console.log(uploadReport)
-        res.json(uploadReport)
+        const imgpath= req.files.image.tempFilePath
+        // "//Users/okpalaanayo/Desktop/blueclock.png"
+        // req.body.image
+
+        const uploadReport =await cloudinary.uploader.upload(imgpath,{resource_type:"image",})
+        // .then((response)=> {
+        //     res.json(response)})
+        console.log('uploadreport',uploadReport)
+        fs.unlinkSync(imgpath)
+        res.status(200).send(uploadReport)
     
     }catch(e){
         res.json(e)

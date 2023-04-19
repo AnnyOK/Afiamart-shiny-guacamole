@@ -8,7 +8,7 @@ import connectDB from "./config/db.js"
 import productRoutes from "./routes/productRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
 import  orderRoutes from "./routes/orderRoutes.js"
-import uploadcloud from "./routes/uploadcloud.js"   
+// import uploadcloud from "./routes/uploadcloud.js"   
 import cloud from "./routes/cloud.js"   
 import{notFound,errorHandler} from './middleware/errorMiddleware.js'
 import fileUpload from "express-fileupload"
@@ -24,17 +24,17 @@ if(process.env.NODE_ENV === 'development'){
 app.use(express.json())
 app.use(fileUpload({useTempFiles: true}))
 
-cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.API_KEY,
-    api_secret: process.env.API_SECRET,
-})
+// cloudinary.config({
+//     cloud_name: process.env.CLOUD_NAME,
+//     api_key: process.env.API_KEY,
+//     api_secret: process.env.API_SECRET,
+// })
 
 connectDB()
 app.use('/api/products',productRoutes);
 app.use('/api/users',userRoutes);
 app.use('/api/orders',orderRoutes);
-app.use('/api/upload',uploadcloud)
+// app.use('/api/upload',uploadcloud)
 app.use('/api/uploads',cloud)
 app.get('/api/config/paypal', (req,res)=>res.send(process.env.PAYPAL_CLIENT_ID))
 

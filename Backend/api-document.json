@@ -1,0 +1,1568 @@
+{
+	"info": {
+		"_postman_id": "b846473b-acb9-46e3-947f-6a7638a37e72",
+		"name": "Afiamart documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21602377"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\": \"hardy@gmail.com\",\n    \"password\":\"greatman55\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"email\": \"hardy@gmail.com\",\n    \"password\":\"greatman55\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "284"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11c-4yZ+OMfU2zk62Ke2WvA1CKgeCCM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Apr 2023 14:10:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"643d0f8f2c101f2fe207b314\",\n    \"name\": \"Okpala chidiebere\",\n    \"email\": \"hardy@gmail.com\",\n    \"isAdmin\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2QwZjhmMmMxMDFmMmZlMjA3YjMxNCIsImlhdCI6MTY4MTc0MDYwNywiZXhwIjoxNjg0MzMyNjA3fQ.t9XgpDjg8363vWXmuAXovc1mnQhFDeXVGQJkS7WBIws\"\n}"
+						}
+					]
+				},
+				{
+					"name": "createuser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Okpala chidi\",\n    \"email\": \"hardy@gmail.com\",\n    \"password\":\"greatman55\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Okpala chidi\",\n    \"email\": \"hardy@gmail.com\",\n    \"password\":\"greatman55\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11d-iD7dQZHDFMKiEGiKsK8aP4aw5E4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Apr 2023 14:10:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"user already exists\",\n    \"stack\": \"Error: user already exists\\n    at file:///Users/okpalaanayo/Documents/MyPersonalProject/Afiamart-shiny-guacamole/backend/controllers/userControllers.js:84:11\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\"\n}"
+						}
+					]
+				},
+				{
+					"name": "userprofile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2QwZjhmMmMxMDFmMmZlMjA3YjMxNCIsImlhdCI6MTY4MTgyNTY1NCwiZXhwIjoxNjg0NDE3NjU0fQ.mwDD4Z1Whm5gfLjocEwwrg2lzkHSPV_CbTHzGcQqOCE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "userprofile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users/profile",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"65-owq3yz+t6y/RSf7GkCN5FtWzURw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 13:52:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"643d0f8f2c101f2fe207b314\",\n    \"name\": \"Okpala chidiebere\",\n    \"email\": \"hardy@gmail.com\",\n    \"isAdmin\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "updateprofile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "updateprofile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"name\": \"Okpala chidi Kelly\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/profile",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11d-e6MoSwGBlQ0o/PFEfZO53lG44rQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 13:54:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"643d0f8f2c101f2fe207b314\",\n    \"name\": \"Okpala chidi Kelly\",\n    \"email\": \"hardy@gmail.com\",\n    \"isAdmin\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2QwZjhmMmMxMDFmMmZlMjA3YjMxNCIsImlhdCI6MTY4MTgyNjA0NCwiZXhwIjoxNjg0NDE4MDQ0fQ.wVm4T1SVHV4_IRaSCxwz9ho4af-q0V7ZhHE9eVqBmaM\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getallusers",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "getallusers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1223"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c7-yGaKkGM54Bff7gXMncu4LiU2SKo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 13:54:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": [\n        {\n            \"_id\": \"62ec170ae96ce61b71691a1b\",\n            \"name\": \"Admin User\",\n            \"email\": \"admin@example.com\",\n            \"password\": \"$2a$10$tPlCgp5g4GP.xprHKlDbDOOhr9t2FdfEeeIfLDbTIQ7PmySpVvXqm\",\n            \"isAdmin\": false,\n            \"timestamps\": true,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62ec170ae96ce61b71691a1d\",\n            \"name\": \"Perry Jada\",\n            \"email\": \"perryjada@example.com\",\n            \"password\": \"$2a$10$fmAYlDAYgl8tUo.vDgOKOOLTMSciDkQDXpSDWHXA1F1p3gA4x6B5.\",\n            \"isAdmin\": false,\n            \"timestamps\": true,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Baracks Obama\",\n            \"email\": \"obamacare@gmail.com\",\n            \"password\": \"$2a$10$cal97rMhlXNwzDRE3zvZrugArOhFB0txgozm5bLwsoKMAfNvFZYG.\",\n            \"isAdmin\": true,\n            \"timestamps\": true,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62f185d56d86fb0e6b7d064f\",\n            \"name\": \"Morgan Merlin\",\n            \"email\": \"morgan@gmail.com\",\n            \"password\": \"$2a$10$ZT3wAX51cEGWVB0ILVbxO.jcpld8CyypUE7gEpjGkGfppWRBKim4y\",\n            \"isAdmin\": true,\n            \"timestamps\": true,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"643cfd2bba7839a03f0b35f1\",\n            \"name\": \"Okpala Anayo\",\n            \"email\": \"okpalaanayo@gmail.com\",\n            \"password\": \"$2a$10$.EZWVZXRXAp3lSI3Al0MW.rbp1c.LWiK5FBf6V29aVLXAxEp12bKi\",\n            \"isAdmin\": true,\n            \"timestamps\": true,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"643d0f8f2c101f2fe207b314\",\n            \"name\": \"Okpala chidi Kelly\",\n            \"email\": \"hardy@gmail.com\",\n            \"password\": \"$2a$10$UZLH/XXpaErxUvkT8se7ZuFFU43wmq4ZKS0qLlTxnQY9xy6DKB/Xa\",\n            \"isAdmin\": true,\n            \"timestamps\": true,\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "getuserbyid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "getuserbyid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users/62f185d56d86fb0e6b7d064f",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"62f185d56d86fb0e6b7d064f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"86-Iqw/7Jsy1WR4qdKrZvGFKtdBs4c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 13:55:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"_id\": \"62f185d56d86fb0e6b7d064f\",\n        \"name\": \"Morgan Merlin\",\n        \"email\": \"morgan@gmail.com\",\n        \"isAdmin\": true,\n        \"timestamps\": true,\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "updateuser",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "updateuser",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users/62f185d56d86fb0e6b7d064f",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"62f185d56d86fb0e6b7d064f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-WpXI7Fb3Sq/vOlm0bY6aE1AODjs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 13:57:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62f185d56d86fb0e6b7d064f\",\n    \"name\": \"Morgan Merlin\",\n    \"email\": \"morgan@gmail.com\",\n    \"isAdmin\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteuser",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "deleteuser",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users/62f185d56d86fb0e6b7d064f",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"62f185d56d86fb0e6b7d064f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-HlBB3xkHFk5DOYHTvU5Id+cUqYA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 13:57:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User removed\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "getproducts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "getproducts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4464"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1170-uic2S5WlqqX7oX6GgVljAmlVdhg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 13:58:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"products\": [\n        {\n            \"_id\": \"62ec170ae96ce61b71691a1f\",\n            \"name\": \"Airpods Wireless Bluetooth Headphones\",\n            \"image\": \"/images/airpods.jpg\",\n            \"brand\": \"Apple\",\n            \"category\": \"Electronics\",\n            \"rating\": 5,\n            \"numreviews\": 1,\n            \"price\": 89.99,\n            \"countInStock\": 3,\n            \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n            \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n            \"timestamps\": true,\n            \"reviews\": [\n                {\n                    \"name\": \"Baracks Obama\",\n                    \"rating\": 5,\n                    \"comment\": \"Very good product for gig lovers\",\n                    \"user\": \"62ec1826ad51d897194bcf6b\",\n                    \"_id\": \"62efaa39deae09c1928d4eb2\",\n                    \"createdAt\": \"2022-08-07T12:04:09.201Z\",\n                    \"updatedAt\": \"2022-08-07T12:04:09.201Z\"\n                }\n            ],\n            \"__v\": 2\n        },\n        {\n            \"_id\": \"62ec170ae96ce61b71691a20\",\n            \"name\": \"iPhone 11 Pro 256GB Memory\",\n            \"image\": \"/images/phone.jpg\",\n            \"brand\": \"Apple\",\n            \"category\": \"Electronics\",\n            \"rating\": 4,\n            \"numreviews\": 1,\n            \"price\": 599.99,\n            \"countInStock\": 10,\n            \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n            \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n            \"timestamps\": true,\n            \"reviews\": [\n                {\n                    \"name\": \"Baracks Obama\",\n                    \"rating\": 4,\n                    \"comment\": \"A phone for average income earner that want a taste of luxury\",\n                    \"user\": \"62ec1826ad51d897194bcf6b\",\n                    \"_id\": \"62efd568deae09c1928d4f57\",\n                    \"createdAt\": \"2022-08-07T15:08:24.846Z\",\n                    \"updatedAt\": \"2022-08-07T15:08:24.846Z\"\n                }\n            ],\n            \"__v\": 1\n        },\n        {\n            \"_id\": \"62ec170ae96ce61b71691a21\",\n            \"name\": \"Cannon EOS 80D DSLR Camera\",\n            \"image\": \"/images/camera.jpg\",\n            \"brand\": \"Cannon\",\n            \"category\": \"Electronics\",\n            \"rating\": 5,\n            \"numreviews\": 1,\n            \"price\": 929.99,\n            \"countInStock\": 0,\n            \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n            \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n            \"timestamps\": true,\n            \"reviews\": [\n                {\n                    \"name\": \"Morgan Merlin\",\n                    \"rating\": 5,\n                    \"comment\": \"Very powerful machine\",\n                    \"user\": \"62f185d56d86fb0e6b7d064f\",\n                    \"_id\": \"62f1861f6d86fb0e6b7d0657\",\n                    \"createdAt\": \"2022-08-08T21:54:39.871Z\",\n                    \"updatedAt\": \"2022-08-08T21:54:39.871Z\"\n                }\n            ],\n            \"__v\": 1\n        },\n        {\n            \"_id\": \"62ec170ae96ce61b71691a22\",\n            \"name\": \"Sony Playstation 4 Pro White Version\",\n            \"image\": \"/images/playstation.jpg\",\n            \"brand\": \"Sony\",\n            \"category\": \"Electronics\",\n            \"rating\": 0,\n            \"numreviews\": 0,\n            \"price\": 399.99,\n            \"countInStock\": 10,\n            \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n            \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n            \"timestamps\": true,\n            \"reviews\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62ec170ae96ce61b71691a23\",\n            \"name\": \"Logitech G-Series Gaming Mouse\",\n            \"image\": \"/images/mouse.jpg\",\n            \"brand\": \"Logitech\",\n            \"category\": \"Electronics\",\n            \"rating\": 0,\n            \"numreviews\": 0,\n            \"price\": 49.99,\n            \"countInStock\": 7,\n            \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n            \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n            \"timestamps\": true,\n            \"reviews\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62ec170ae96ce61b71691a24\",\n            \"name\": \"Amazon Echo Dot 3rd Generation\",\n            \"image\": \"/images/alexa.jpg\",\n            \"brand\": \"Amazon\",\n            \"category\": \"Electronics\",\n            \"rating\": 0,\n            \"numreviews\": 0,\n            \"price\": 29.99,\n            \"countInStock\": 0,\n            \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n            \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n            \"timestamps\": true,\n            \"reviews\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62ec270624d5799b58679b56\",\n            \"user\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Home Theater\",\n            \"image\": \"https://res.cloudinary.com/drho9mnyb/image/upload/v1660767032/bunf4akvor4138slshrt.webp\",\n            \"brand\": \"Basoo\",\n            \"category\": \"Electronics\",\n            \"rating\": 0,\n            \"numreviews\": 0,\n            \"price\": 1200,\n            \"countInStock\": 20,\n            \"createdAt\": \"2022-08-04T20:05:06.816Z\",\n            \"updatedAt\": \"2022-08-04T20:05:06.816Z\",\n            \"timestamps\": true,\n            \"reviews\": [],\n            \"__v\": 0,\n            \"description\": \"Loving shoes. You can only but want more\"\n        },\n        {\n            \"_id\": \"62ecd6e337f083cf75bac642\",\n            \"user\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Mac book pro\",\n            \"image\": \"https://res.cloudinary.com/drho9mnyb/image/upload/v1660744860/jvatbst8agf5zzky5bo8.png\",\n            \"brand\": \"Macbook\",\n            \"category\": \"Phones& computers\",\n            \"rating\": 0,\n            \"numreviews\": 0,\n            \"price\": 450,\n            \"countInStock\": 0,\n            \"description\": \"Elegant and powerful computer\",\n            \"createdAt\": \"2022-08-05T00:36:11.975Z\",\n            \"updatedAt\": \"2022-08-05T00:36:11.975Z\",\n            \"timestamps\": true,\n            \"reviews\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62f244580030e71104a0eea6\",\n            \"user\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Car stereo\",\n            \"image\": \"https://res.cloudinary.com/drho9mnyb/image/upload/v1660767331/b5mmqvbfxf1n58w3j5pj.webp\",\n            \"brand\": \"Kumbaso\",\n            \"category\": \"Electronics\",\n            \"rating\": 0,\n            \"numreviews\": 0,\n            \"price\": 200,\n            \"countInStock\": 0,\n            \"description\": \"58dp powerful stereo output\",\n            \"createdAt\": \"2022-08-08T19:50:13.683Z\",\n            \"updatedAt\": \"2022-08-08T19:50:13.683Z\",\n            \"timestamps\": true,\n            \"reviews\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62fd5725b6fdc6f53441fd3a\",\n            \"user\": \"62f185d56d86fb0e6b7d064f\",\n            \"name\": \"1\",\n            \"image\": \"https://res.cloudinary.com/drho9mnyb/image/upload/v1661037717/dluhyckxdprdhbtjuikx.webp\",\n            \"brand\": \"sample brand\",\n            \"category\": \"sample category\",\n            \"rating\": 0,\n            \"numreviews\": 0,\n            \"price\": 56681,\n            \"countInStock\": 0,\n            \"description\": \"sample description\",\n            \"createdAt\": \"2022-08-17T20:58:12.301Z\",\n            \"updatedAt\": \"2022-08-17T20:58:12.301Z\",\n            \"timestamps\": true,\n            \"reviews\": [],\n            \"__v\": 0\n        }\n    ],\n    \"pageNumber\": 1,\n    \"pages\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "top rated",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "top rated",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products/top",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"top"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2695"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a87-rzTIp7rzUaMWS2dnGpmbslyb9w4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:00:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"643cfdd2ba7839a03f0b360e\",\n        \"user\": \"643cfd2bba7839a03f0b35f1\",\n        \"name\": \"Iphone 14 promax\",\n        \"image\": \"https://res.cloudinary.com/drho9mnyb/image/upload/v1681807497/lnd3npy7oezcqffa1xxv.webp\",\n        \"brand\": \"mac\",\n        \"category\": \"Phones& computers\",\n        \"rating\": 5,\n        \"numreviews\": 1,\n        \"price\": 569,\n        \"countInStock\": 10,\n        \"description\": \"This is the latest model of Iphone. class defines\",\n        \"createdAt\": \"2023-04-17T07:53:25.202Z\",\n        \"updatedAt\": \"2023-04-17T07:53:25.202Z\",\n        \"timestamps\": true,\n        \"reviews\": [\n            {\n                \"name\": \"Okpala chidiebere\",\n                \"rating\": 5,\n                \"comment\": \"Nice product. very staisfying to use\",\n                \"user\": \"643d0f8f2c101f2fe207b314\",\n                \"_id\": \"643d21d4f40dee3d0114ea4d\",\n                \"createdAt\": \"2023-04-17T10:39:16.495Z\",\n                \"updatedAt\": \"2023-04-17T10:39:16.495Z\"\n            }\n        ],\n        \"__v\": 1\n    },\n    {\n        \"_id\": \"62ec170ae96ce61b71691a1f\",\n        \"name\": \"Airpods Wireless Bluetooth Headphones\",\n        \"image\": \"/images/airpods.jpg\",\n        \"brand\": \"Apple\",\n        \"category\": \"Electronics\",\n        \"rating\": 5,\n        \"numreviews\": 1,\n        \"price\": 89.99,\n        \"countInStock\": 3,\n        \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n        \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n        \"timestamps\": true,\n        \"reviews\": [\n            {\n                \"name\": \"Baracks Obama\",\n                \"rating\": 5,\n                \"comment\": \"Very good product for gig lovers\",\n                \"user\": \"62ec1826ad51d897194bcf6b\",\n                \"_id\": \"62efaa39deae09c1928d4eb2\",\n                \"createdAt\": \"2022-08-07T12:04:09.201Z\",\n                \"updatedAt\": \"2022-08-07T12:04:09.201Z\"\n            }\n        ],\n        \"__v\": 2\n    },\n    {\n        \"_id\": \"62ec170ae96ce61b71691a21\",\n        \"name\": \"Cannon EOS 80D DSLR Camera\",\n        \"image\": \"/images/camera.jpg\",\n        \"brand\": \"Cannon\",\n        \"category\": \"Electronics\",\n        \"rating\": 5,\n        \"numreviews\": 1,\n        \"price\": 929.99,\n        \"countInStock\": 0,\n        \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n        \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n        \"timestamps\": true,\n        \"reviews\": [\n            {\n                \"name\": \"Morgan Merlin\",\n                \"rating\": 5,\n                \"comment\": \"Very powerful machine\",\n                \"user\": \"62f185d56d86fb0e6b7d064f\",\n                \"_id\": \"62f1861f6d86fb0e6b7d0657\",\n                \"createdAt\": \"2022-08-08T21:54:39.871Z\",\n                \"updatedAt\": \"2022-08-08T21:54:39.871Z\"\n            }\n        ],\n        \"__v\": 1\n    },\n    {\n        \"_id\": \"62ec170ae96ce61b71691a20\",\n        \"name\": \"iPhone 11 Pro 256GB Memory\",\n        \"image\": \"/images/phone.jpg\",\n        \"brand\": \"Apple\",\n        \"category\": \"Electronics\",\n        \"rating\": 4,\n        \"numreviews\": 1,\n        \"price\": 599.99,\n        \"countInStock\": 10,\n        \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n        \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n        \"timestamps\": true,\n        \"reviews\": [\n            {\n                \"name\": \"Baracks Obama\",\n                \"rating\": 4,\n                \"comment\": \"A phone for average income earner that want a taste of luxury\",\n                \"user\": \"62ec1826ad51d897194bcf6b\",\n                \"_id\": \"62efd568deae09c1928d4f57\",\n                \"createdAt\": \"2022-08-07T15:08:24.846Z\",\n                \"updatedAt\": \"2022-08-07T15:08:24.846Z\"\n            }\n        ],\n        \"__v\": 1\n    },\n    {\n        \"_id\": \"62ec170ae96ce61b71691a22\",\n        \"name\": \"Sony Playstation 4 Pro White Version\",\n        \"image\": \"/images/playstation.jpg\",\n        \"brand\": \"Sony\",\n        \"category\": \"Electronics\",\n        \"rating\": 0,\n        \"numreviews\": 0,\n        \"price\": 399.99,\n        \"countInStock\": 10,\n        \"createdAt\": \"2022-08-04T18:59:19.452Z\",\n        \"updatedAt\": \"2022-08-04T18:59:19.452Z\",\n        \"timestamps\": true,\n        \"reviews\": [],\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "createproduct",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "createproduct",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "375"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"177-Rak5ZhDTVfeLYhQV2DJnUCGjrks\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:10:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": \"643d0f8f2c101f2fe207b314\",\n    \"name\": \"sample name\",\n    \"image\": \"/images/sample.jpg\",\n    \"brand\": \"sample brand\",\n    \"category\": \"sample category\",\n    \"rating\": 0,\n    \"numreviews\": 0,\n    \"price\": 0,\n    \"countInStock\": 0,\n    \"description\": \"sample description\",\n    \"createdAt\": \"2023-04-18T13:40:39.935Z\",\n    \"updatedAt\": \"2023-04-18T13:40:39.935Z\",\n    \"timestamps\": true,\n    \"_id\": \"643ea4d5b009fc18f7e33aa9\",\n    \"reviews\": [],\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "getProductbyid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "getProductbyid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products/643ea264b009fc18f7e33a9c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"643ea264b009fc18f7e33a9c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "375"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"177-EerT7GlNHS+YF/y1dBRN4HB3JG8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:03:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"643ea264b009fc18f7e33a9c\",\n    \"user\": \"643d0f8f2c101f2fe207b314\",\n    \"name\": \"sample name\",\n    \"image\": \"/images/sample.jpg\",\n    \"brand\": \"sample brand\",\n    \"category\": \"sample category\",\n    \"rating\": 0,\n    \"numreviews\": 0,\n    \"price\": 0,\n    \"countInStock\": 0,\n    \"description\": \"sample description\",\n    \"createdAt\": \"2023-04-18T13:40:39.935Z\",\n    \"updatedAt\": \"2023-04-18T13:40:39.935Z\",\n    \"timestamps\": true,\n    \"reviews\": [],\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "update product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"name\":\"Oregon\",\n\"image\":\"/images/tests.jpg\",\n\"brand\":\"Amazon\",\n\"category\":\"Home appliances\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/products/643ea264b009fc18f7e33a9c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"643ea264b009fc18f7e33a9c"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "363"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16b-fOXobHe6JFPpaAeqIUneSmVOuL4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:06:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"643ea264b009fc18f7e33a9c\",\n    \"user\": \"643d0f8f2c101f2fe207b314\",\n    \"name\": \"Oregon\",\n    \"image\": \"/images/tests.jpg\",\n    \"brand\": \"Amazon\",\n    \"category\": \"Home appliances\",\n    \"rating\": 0,\n    \"numreviews\": 0,\n    \"price\": 0,\n    \"countInStock\": 0,\n    \"description\": \"sample description\",\n    \"createdAt\": \"2023-04-18T13:40:39.935Z\",\n    \"updatedAt\": \"2023-04-18T13:40:39.935Z\",\n    \"timestamps\": true,\n    \"reviews\": [],\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "createreviews",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "createreviews",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rating\":5,\n    \"comment\":\"This is a a sample comment on this product\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/products/643ea4d5b009fc18f7e33aa9/reviews",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"643ea4d5b009fc18f7e33aa9",
+										"reviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-GzWSP9bqbbJg9k1OJ1mY9xZd39w\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:11:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review added\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteproductbyid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "deleteproductbyid",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products/643ea264b009fc18f7e33a9c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"643ea264b009fc18f7e33a9c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-k413m2+23qW1k9udAjmvurqQJfk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:08:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Product removed\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "getallorders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "getallorders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/orders",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8654"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21ce-c6JH+2UQ/aczD6lorsecLbPIQsg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:13:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"shippingAddress\": {\n            \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n            \"city\": \"Benin city\",\n            \"postalCode\": 234677,\n            \"country\": \"Nigeria\"\n        },\n        \"_id\": \"62ec189cad51d897194bcf8a\",\n        \"user\": {\n            \"_id\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Baracks Obama\"\n        },\n        \"orderItems\": [\n            {\n                \"name\": \"Logitech G-Series Gaming Mouse\",\n                \"qty\": 3,\n                \"image\": \"/images/mouse.jpg\",\n                \"price\": 49.99,\n                \"product\": \"62a4e71463a87c0602a1ece9\",\n                \"_id\": \"62ec189cad51d897194bcf8b\"\n            },\n            {\n                \"name\": \"Cannon EOS 80D DSLR Camera\",\n                \"qty\": 1,\n                \"image\": \"/images/camera.jpg\",\n                \"price\": 929.99,\n                \"product\": \"62a4e71463a87c0602a1ece7\",\n                \"_id\": \"62ec189cad51d897194bcf8c\"\n            },\n            {\n                \"name\": \"iPhone 11 Pro 256GB Memory\",\n                \"qty\": 1,\n                \"image\": \"/images/phone.jpg\",\n                \"price\": 599.99,\n                \"product\": \"62ec170ae96ce61b71691a20\",\n                \"_id\": \"62ec189cad51d897194bcf8d\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 251.99,\n        \"shippingPrice\": 100,\n        \"totalPrice\": 2031.94,\n        \"isPaid\": true,\n        \"isDelivered\": true,\n        \"createdAt\": \"2022-08-04T19:06:04.032Z\",\n        \"updatedAt\": \"2023-04-17T11:11:21.289Z\",\n        \"__v\": 0,\n        \"deliveredAt\": \"2023-04-17T11:09:36.670Z\",\n        \"paidAt\": \"2023-04-17T11:11:21.286Z\"\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n            \"city\": \"Benin city\",\n            \"postalCode\": 234677,\n            \"country\": \"Nigeria\"\n        },\n        \"_id\": \"62ee9d4e830deabe6420ffba\",\n        \"user\": {\n            \"_id\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Baracks Obama\"\n        },\n        \"orderItems\": [\n            {\n                \"name\": \"Logitech G-Series Gaming Mouse\",\n                \"qty\": 3,\n                \"image\": \"/images/mouse.jpg\",\n                \"price\": 49.99,\n                \"product\": \"62a4e71463a87c0602a1ece9\",\n                \"_id\": \"62ee9d4e830deabe6420ffbb\"\n            },\n            {\n                \"name\": \"Cannon EOS 80D DSLR Camera\",\n                \"qty\": 1,\n                \"image\": \"/images/camera.jpg\",\n                \"price\": 929.99,\n                \"product\": \"62a4e71463a87c0602a1ece7\",\n                \"_id\": \"62ee9d4e830deabe6420ffbc\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 161.99,\n        \"shippingPrice\": 100,\n        \"totalPrice\": 1341.95,\n        \"isPaid\": false,\n        \"isDelivered\": false,\n        \"createdAt\": \"2022-08-06T16:56:46.092Z\",\n        \"updatedAt\": \"2022-08-06T16:56:46.092Z\",\n        \"__v\": 0\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n            \"city\": \"Benin city\",\n            \"postalCode\": 234677,\n            \"country\": \"Nigeria\"\n        },\n        \"paymentResult\": {\n            \"id\": \"5EC544673C669913Y\",\n            \"status\": \"COMPLETED\",\n            \"update_time\": \"2022-08-06T19:53:57Z\"\n        },\n        \"_id\": \"62eec6be47fd9aa0be7a84e1\",\n        \"user\": {\n            \"_id\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Baracks Obama\"\n        },\n        \"orderItems\": [\n            {\n                \"name\": \"Logitech G-Series Gaming Mouse\",\n                \"qty\": 3,\n                \"image\": \"/images/mouse.jpg\",\n                \"price\": 49.99,\n                \"product\": \"62a4e71463a87c0602a1ece9\",\n                \"_id\": \"62eec6be47fd9aa0be7a84e2\"\n            },\n            {\n                \"name\": \"Cannon EOS 80D DSLR Camera\",\n                \"qty\": 1,\n                \"image\": \"/images/camera.jpg\",\n                \"price\": 929.99,\n                \"product\": \"62a4e71463a87c0602a1ece7\",\n                \"_id\": \"62eec6be47fd9aa0be7a84e3\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 161.99,\n        \"shippingPrice\": 100,\n        \"totalPrice\": 1341.95,\n        \"isPaid\": true,\n        \"isDelivered\": false,\n        \"createdAt\": \"2022-08-06T19:53:34.308Z\",\n        \"updatedAt\": \"2022-08-06T19:53:58.987Z\",\n        \"__v\": 0,\n        \"paidAt\": \"2022-08-06T19:53:58.983Z\"\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n            \"city\": \"Benin city\",\n            \"postalCode\": 234677,\n            \"country\": \"Nigeria\"\n        },\n        \"_id\": \"62eeeb59da1cec9f7fd8d64c\",\n        \"user\": {\n            \"_id\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Baracks Obama\"\n        },\n        \"orderItems\": [\n            {\n                \"name\": \"Logitech G-Series Gaming Mouse\",\n                \"qty\": 3,\n                \"image\": \"/images/mouse.jpg\",\n                \"price\": 49.99,\n                \"product\": \"62a4e71463a87c0602a1ece9\",\n                \"_id\": \"62eeeb59da1cec9f7fd8d64d\"\n            },\n            {\n                \"name\": \"Cannon EOS 80D DSLR Camera\",\n                \"qty\": 1,\n                \"image\": \"/images/camera.jpg\",\n                \"price\": 929.99,\n                \"product\": \"62a4e71463a87c0602a1ece7\",\n                \"_id\": \"62eeeb59da1cec9f7fd8d64e\"\n            },\n            {\n                \"name\": \"Airpods Wireless Bluetooth Headphones\",\n                \"qty\": 1,\n                \"image\": \"/images/airpods.jpg\",\n                \"price\": 89.99,\n                \"product\": \"62ec170ae96ce61b71691a1f\",\n                \"_id\": \"62eeeb59da1cec9f7fd8d64f\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 175.49,\n        \"shippingPrice\": 100,\n        \"totalPrice\": 1445.44,\n        \"isPaid\": false,\n        \"isDelivered\": false,\n        \"createdAt\": \"2022-08-06T22:29:45.517Z\",\n        \"updatedAt\": \"2022-08-06T22:29:45.517Z\",\n        \"__v\": 0\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n            \"city\": \"Benin city\",\n            \"postalCode\": 234677,\n            \"country\": \"Nigeria\"\n        },\n        \"paymentResult\": {\n            \"id\": \"4LE90374B8965660G\",\n            \"status\": \"COMPLETED\",\n            \"update_time\": \"2022-08-06T22:43:41Z\"\n        },\n        \"_id\": \"62eeeb7fda1cec9f7fd8d658\",\n        \"user\": {\n            \"_id\": \"62ec1826ad51d897194bcf6b\",\n            \"name\": \"Baracks Obama\"\n        },\n        \"orderItems\": [\n            {\n                \"name\": \"Logitech G-Series Gaming Mouse\",\n                \"qty\": 3,\n                \"image\": \"/images/mouse.jpg\",\n                \"price\": 49.99,\n                \"product\": \"62a4e71463a87c0602a1ece9\",\n                \"_id\": \"62eeeb7fda1cec9f7fd8d659\"\n            },\n            {\n                \"name\": \"Cannon EOS 80D DSLR Camera\",\n                \"qty\": 1,\n                \"image\": \"/images/camera.jpg\",\n                \"price\": 929.99,\n                \"product\": \"62a4e71463a87c0602a1ece7\",\n                \"_id\": \"62eeeb7fda1cec9f7fd8d65a\"\n            },\n            {\n                \"name\": \"Airpods Wireless Bluetooth Headphones\",\n                \"qty\": 1,\n                \"image\": \"/images/airpods.jpg\",\n                \"price\": 89.99,\n                \"product\": \"62ec170ae96ce61b71691a1f\",\n                \"_id\": \"62eeeb7fda1cec9f7fd8d65b\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 175.49,\n        \"shippingPrice\": 100,\n        \"totalPrice\": 1445.44,\n        \"isPaid\": true,\n        \"isDelivered\": true,\n        \"createdAt\": \"2022-08-06T22:30:23.034Z\",\n        \"updatedAt\": \"2022-08-07T00:17:05.669Z\",\n        \"__v\": 0,\n        \"paidAt\": \"2022-08-06T22:43:41.636Z\",\n        \"deliveredAt\": \"2022-08-07T00:17:05.667Z\"\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"decagon \",\n            \"city\": \"benine\",\n            \"postalCode\": 234355,\n            \"country\": \"nigeria\"\n        },\n        \"paymentResult\": {\n            \"id\": \"78X191196V590840B\",\n            \"status\": \"COMPLETED\",\n            \"update_time\": \"2022-10-11T10:28:29Z\"\n        },\n        \"_id\": \"62f19294ded1d8a9187b7609\",\n        \"user\": null,\n        \"orderItems\": [\n            {\n                \"name\": \"Airpods Wireless Bluetooth Headphones\",\n                \"qty\": 1,\n                \"image\": \"/images/airpods.jpg\",\n                \"price\": 89.99,\n                \"product\": \"62ec170ae96ce61b71691a1f\",\n                \"_id\": \"62f19294ded1d8a9187b760a\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 13.5,\n        \"shippingPrice\": 0,\n        \"totalPrice\": 103.49,\n        \"isPaid\": true,\n        \"isDelivered\": true,\n        \"createdAt\": \"2022-08-08T22:47:48.893Z\",\n        \"updatedAt\": \"2022-10-11T10:29:11.411Z\",\n        \"__v\": 0,\n        \"paidAt\": \"2022-10-11T10:28:31.874Z\",\n        \"deliveredAt\": \"2022-10-11T10:29:11.410Z\"\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"decagon \",\n            \"city\": \"benine\",\n            \"postalCode\": 234355,\n            \"country\": \"nigeria\"\n        },\n        \"_id\": \"62fca43c443ae5cac6a8c820\",\n        \"user\": null,\n        \"orderItems\": [\n            {\n                \"name\": \"Airpods Wireless Bluetooth Headphones\",\n                \"qty\": 1,\n                \"image\": \"/images/airpods.jpg\",\n                \"price\": 89.99,\n                \"product\": \"62ec170ae96ce61b71691a1f\",\n                \"_id\": \"62fca43c443ae5cac6a8c821\"\n            },\n            {\n                \"name\": \"Logitech G-Series Gaming Mouse\",\n                \"qty\": 1,\n                \"image\": \"/images/mouse.jpg\",\n                \"price\": 49.99,\n                \"product\": \"62ec170ae96ce61b71691a23\",\n                \"_id\": \"62fca43c443ae5cac6a8c822\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 21,\n        \"shippingPrice\": 100,\n        \"totalPrice\": 260.98,\n        \"isPaid\": false,\n        \"isDelivered\": false,\n        \"createdAt\": \"2022-08-17T08:18:04.414Z\",\n        \"updatedAt\": \"2022-08-17T08:18:04.414Z\",\n        \"__v\": 0\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n            \"city\": \"Benin city\",\n            \"postalCode\": 101241,\n            \"country\": \"Nigeria\"\n        },\n        \"paymentResult\": {\n            \"id\": \"8TU336700X235873Y\",\n            \"status\": \"COMPLETED\",\n            \"update_time\": \"2022-08-17T13:56:25Z\"\n        },\n        \"_id\": \"62fcf34b9befed4f5be12e5e\",\n        \"user\": null,\n        \"orderItems\": [\n            {\n                \"name\": \"Logitech G-Series Gaming Mouse\",\n                \"qty\": 1,\n                \"image\": \"/images/mouse.jpg\",\n                \"price\": 49.99,\n                \"product\": \"62ec170ae96ce61b71691a23\",\n                \"_id\": \"62fcf34b9befed4f5be12e5f\"\n            },\n            {\n                \"name\": \"Philipio Star\",\n                \"qty\": 1,\n                \"image\": \"https://res.cloudinary.com/drho9mnyb/image/upload/v1660225996/utciqpl84xanngtuemey.png\",\n                \"price\": 1200,\n                \"product\": \"62ec270624d5799b58679b56\",\n                \"_id\": \"62fcf34b9befed4f5be12e60\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 187.5,\n        \"shippingPrice\": 100,\n        \"totalPrice\": 1537.49,\n        \"isPaid\": true,\n        \"isDelivered\": true,\n        \"createdAt\": \"2022-08-17T13:55:23.742Z\",\n        \"updatedAt\": \"2022-08-17T13:56:53.690Z\",\n        \"__v\": 0,\n        \"paidAt\": \"2022-08-17T13:56:27.987Z\",\n        \"deliveredAt\": \"2022-08-17T13:56:53.688Z\"\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n            \"city\": \"Benin city\",\n            \"postalCode\": 101241,\n            \"country\": \"Nigeria\"\n        },\n        \"paymentResult\": {\n            \"id\": \"47269015YH657472E\",\n            \"status\": \"COMPLETED\",\n            \"update_time\": \"2022-08-17T21:00:11Z\"\n        },\n        \"_id\": \"62fd56b6b6fdc6f53441fd19\",\n        \"user\": null,\n        \"orderItems\": [\n            {\n                \"name\": \"Logitech G-Series Gaming Mouse\",\n                \"qty\": 1,\n                \"image\": \"/images/mouse.jpg\",\n                \"price\": 49.99,\n                \"product\": \"62ec170ae96ce61b71691a23\",\n                \"_id\": \"62fd56b6b6fdc6f53441fd1a\"\n            },\n            {\n                \"name\": \"Airpods Wireless Bluetooth Headphones\",\n                \"qty\": 1,\n                \"image\": \"/images/airpods.jpg\",\n                \"price\": 89.99,\n                \"product\": \"62ec170ae96ce61b71691a1f\",\n                \"_id\": \"62fd56b6b6fdc6f53441fd1b\"\n            }\n        ],\n        \"paymentMethod\": \"PayPal\",\n        \"taxPrice\": 21,\n        \"shippingPrice\": 100,\n        \"totalPrice\": 260.98,\n        \"isPaid\": true,\n        \"isDelivered\": true,\n        \"createdAt\": \"2022-08-17T20:59:34.867Z\",\n        \"updatedAt\": \"2022-08-17T21:00:29.279Z\",\n        \"__v\": 0,\n        \"paidAt\": \"2022-08-17T21:00:12.659Z\",\n        \"deliveredAt\": \"2022-08-17T21:00:29.277Z\"\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"20 Jobi fele way\",\n            \"city\": \"lagos\",\n            \"postalCode\": 11011,\n            \"country\": \"Nigeria\"\n        },\n        \"_id\": \"643d27e2f40dee3d0114ea5a\",\n        \"user\": {\n            \"_id\": \"643d0f8f2c101f2fe207b314\",\n            \"name\": \"Okpala chidi Kelly\"\n        },\n        \"orderItems\": [\n            {\n                \"name\": \"Airpod\",\n                \"qty\": 1,\n                \"image\": \"/images/airpod.png\",\n                \"price\": 7,\n                \"product\": \"62ec170ae96ce61b71691a1f\",\n                \"_id\": \"643d27e2f40dee3d0114ea5b\"\n            }\n        ],\n        \"paymentMethod\": \"Stripe\",\n        \"taxPrice\": 34,\n        \"shippingPrice\": 34,\n        \"totalPrice\": 850,\n        \"isPaid\": false,\n        \"isDelivered\": false,\n        \"createdAt\": \"2023-04-17T11:05:06.525Z\",\n        \"updatedAt\": \"2023-04-17T11:05:06.525Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "addorder",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "addorder",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"orderItems\": [\n    {\n      \"name\":\"Motorola razor\",\n      \"qty\": 6,\n      \"image\": \"sample image here\",\n      \"price\": 400,\n      \"product\": \"643ea264b009fc18f7e33a9c\"\n    }\n  ],\n  \"shippingAddress\":{\n      \"address\":\"19 Oyemomi\",\n      \"city\": \"Lagos\",\n      \"postalCode\":11011,\n      \"country\":\"Nigeria\"\n  },\n  \"paymentMethod\":\"STRIPE\",\n  \n\"taxPrice\":10,\n\"shippingPrice\":10,\n\"totalPrice\":420\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/orders",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "520"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"208-nQ6pXo4bMPu4/MrewO8X1CC+lKk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:21:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": \"643d0f8f2c101f2fe207b314\",\n    \"orderItems\": [\n        {\n            \"name\": \"Motorola razor\",\n            \"qty\": 6,\n            \"image\": \"sample image here\",\n            \"price\": 400,\n            \"product\": \"643ea264b009fc18f7e33a9c\",\n            \"_id\": \"643ea754b009fc18f7e33ab4\"\n        }\n    ],\n    \"shippingAddress\": {\n        \"address\": \"19 Oyemomi\",\n        \"city\": \"Lagos\",\n        \"postalCode\": 11011,\n        \"country\": \"Nigeria\"\n    },\n    \"paymentMethod\": \"STRIPE\",\n    \"taxPrice\": 10,\n    \"shippingPrice\": 10,\n    \"totalPrice\": 420,\n    \"isPaid\": false,\n    \"isDelivered\": false,\n    \"_id\": \"643ea754b009fc18f7e33ab3\",\n    \"createdAt\": \"2023-04-18T14:21:08.044Z\",\n    \"updatedAt\": \"2023-04-18T14:21:08.044Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "getmyorders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "getmyorders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/orders/myorders",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"myorders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1040"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"410-/Z2dkdxwcT6TRlX/ZpuFjojWjkA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:22:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"shippingAddress\": {\n            \"address\": \"20 Jobi fele way\",\n            \"city\": \"lagos\",\n            \"postalCode\": 11011,\n            \"country\": \"Nigeria\"\n        },\n        \"_id\": \"643d27e2f40dee3d0114ea5a\",\n        \"user\": \"643d0f8f2c101f2fe207b314\",\n        \"orderItems\": [\n            {\n                \"name\": \"Airpod\",\n                \"qty\": 1,\n                \"image\": \"/images/airpod.png\",\n                \"price\": 7,\n                \"product\": \"62ec170ae96ce61b71691a1f\",\n                \"_id\": \"643d27e2f40dee3d0114ea5b\"\n            }\n        ],\n        \"paymentMethod\": \"Stripe\",\n        \"taxPrice\": 34,\n        \"shippingPrice\": 34,\n        \"totalPrice\": 850,\n        \"isPaid\": false,\n        \"isDelivered\": false,\n        \"createdAt\": \"2023-04-17T11:05:06.525Z\",\n        \"updatedAt\": \"2023-04-17T11:05:06.525Z\",\n        \"__v\": 0\n    },\n    {\n        \"shippingAddress\": {\n            \"address\": \"19 Oyemomi\",\n            \"city\": \"Lagos\",\n            \"postalCode\": 11011,\n            \"country\": \"Nigeria\"\n        },\n        \"_id\": \"643ea754b009fc18f7e33ab3\",\n        \"user\": \"643d0f8f2c101f2fe207b314\",\n        \"orderItems\": [\n            {\n                \"name\": \"Motorola razor\",\n                \"qty\": 6,\n                \"image\": \"sample image here\",\n                \"price\": 400,\n                \"product\": \"643ea264b009fc18f7e33a9c\",\n                \"_id\": \"643ea754b009fc18f7e33ab4\"\n            }\n        ],\n        \"paymentMethod\": \"STRIPE\",\n        \"taxPrice\": 10,\n        \"shippingPrice\": 10,\n        \"totalPrice\": 420,\n        \"isPaid\": false,\n        \"isDelivered\": false,\n        \"createdAt\": \"2023-04-18T14:21:08.044Z\",\n        \"updatedAt\": \"2023-04-18T14:21:08.044Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getordersbyid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "getordersbyid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/orders/62ec189cad51d897194bcf8a",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"62ec189cad51d897194bcf8a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1050"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41a-oP/IM3FV2p7IwiqQ2GNFaMTWLCQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:23:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"shippingAddress\": {\n        \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n        \"city\": \"Benin city\",\n        \"postalCode\": 234677,\n        \"country\": \"Nigeria\"\n    },\n    \"_id\": \"62ec189cad51d897194bcf8a\",\n    \"user\": {\n        \"_id\": \"62ec1826ad51d897194bcf6b\",\n        \"name\": \"Baracks Obama\",\n        \"email\": \"obamacare@gmail.com\"\n    },\n    \"orderItems\": [\n        {\n            \"name\": \"Logitech G-Series Gaming Mouse\",\n            \"qty\": 3,\n            \"image\": \"/images/mouse.jpg\",\n            \"price\": 49.99,\n            \"product\": \"62a4e71463a87c0602a1ece9\",\n            \"_id\": \"62ec189cad51d897194bcf8b\"\n        },\n        {\n            \"name\": \"Cannon EOS 80D DSLR Camera\",\n            \"qty\": 1,\n            \"image\": \"/images/camera.jpg\",\n            \"price\": 929.99,\n            \"product\": \"62a4e71463a87c0602a1ece7\",\n            \"_id\": \"62ec189cad51d897194bcf8c\"\n        },\n        {\n            \"name\": \"iPhone 11 Pro 256GB Memory\",\n            \"qty\": 1,\n            \"image\": \"/images/phone.jpg\",\n            \"price\": 599.99,\n            \"product\": \"62ec170ae96ce61b71691a20\",\n            \"_id\": \"62ec189cad51d897194bcf8d\"\n        }\n    ],\n    \"paymentMethod\": \"PayPal\",\n    \"taxPrice\": 251.99,\n    \"shippingPrice\": 100,\n    \"totalPrice\": 2031.94,\n    \"isPaid\": true,\n    \"isDelivered\": true,\n    \"createdAt\": \"2022-08-04T19:06:04.032Z\",\n    \"updatedAt\": \"2023-04-17T11:11:21.289Z\",\n    \"__v\": 0,\n    \"deliveredAt\": \"2023-04-17T11:09:36.670Z\",\n    \"paidAt\": \"2023-04-17T11:11:21.286Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deliverorderbyid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "deliverorderbyid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/orders/62ec189cad51d897194bcf8a",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"62ec189cad51d897194bcf8a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "989"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3dd-Gzr0Q6ATh3tf0Ri6VF042Jg2U2A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:24:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"shippingAddress\": {\n        \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n        \"city\": \"Benin city\",\n        \"postalCode\": 234677,\n        \"country\": \"Nigeria\"\n    },\n    \"_id\": \"62ec189cad51d897194bcf8a\",\n    \"user\": \"62ec1826ad51d897194bcf6b\",\n    \"orderItems\": [\n        {\n            \"name\": \"Logitech G-Series Gaming Mouse\",\n            \"qty\": 3,\n            \"image\": \"/images/mouse.jpg\",\n            \"price\": 49.99,\n            \"product\": \"62a4e71463a87c0602a1ece9\",\n            \"_id\": \"62ec189cad51d897194bcf8b\"\n        },\n        {\n            \"name\": \"Cannon EOS 80D DSLR Camera\",\n            \"qty\": 1,\n            \"image\": \"/images/camera.jpg\",\n            \"price\": 929.99,\n            \"product\": \"62a4e71463a87c0602a1ece7\",\n            \"_id\": \"62ec189cad51d897194bcf8c\"\n        },\n        {\n            \"name\": \"iPhone 11 Pro 256GB Memory\",\n            \"qty\": 1,\n            \"image\": \"/images/phone.jpg\",\n            \"price\": 599.99,\n            \"product\": \"62ec170ae96ce61b71691a20\",\n            \"_id\": \"62ec189cad51d897194bcf8d\"\n        }\n    ],\n    \"paymentMethod\": \"PayPal\",\n    \"taxPrice\": 251.99,\n    \"shippingPrice\": 100,\n    \"totalPrice\": 2031.94,\n    \"isPaid\": true,\n    \"isDelivered\": true,\n    \"createdAt\": \"2022-08-04T19:06:04.032Z\",\n    \"updatedAt\": \"2023-04-18T14:24:03.648Z\",\n    \"__v\": 0,\n    \"deliveredAt\": \"2023-04-18T14:24:03.647Z\",\n    \"paidAt\": \"2023-04-17T11:11:21.286Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateordertopaid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "updateordertopaid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/orders/62ec189cad51d897194bcf8a/pay",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"62ec189cad51d897194bcf8a",
+										"pay"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "989"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3dd-NtR3mVd1mk1xHIEjP6aqRCe0OmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:24:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"shippingAddress\": {\n        \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n        \"city\": \"Benin city\",\n        \"postalCode\": 234677,\n        \"country\": \"Nigeria\"\n    },\n    \"_id\": \"62ec189cad51d897194bcf8a\",\n    \"user\": \"62ec1826ad51d897194bcf6b\",\n    \"orderItems\": [\n        {\n            \"name\": \"Logitech G-Series Gaming Mouse\",\n            \"qty\": 3,\n            \"image\": \"/images/mouse.jpg\",\n            \"price\": 49.99,\n            \"product\": \"62a4e71463a87c0602a1ece9\",\n            \"_id\": \"62ec189cad51d897194bcf8b\"\n        },\n        {\n            \"name\": \"Cannon EOS 80D DSLR Camera\",\n            \"qty\": 1,\n            \"image\": \"/images/camera.jpg\",\n            \"price\": 929.99,\n            \"product\": \"62a4e71463a87c0602a1ece7\",\n            \"_id\": \"62ec189cad51d897194bcf8c\"\n        },\n        {\n            \"name\": \"iPhone 11 Pro 256GB Memory\",\n            \"qty\": 1,\n            \"image\": \"/images/phone.jpg\",\n            \"price\": 599.99,\n            \"product\": \"62ec170ae96ce61b71691a20\",\n            \"_id\": \"62ec189cad51d897194bcf8d\"\n        }\n    ],\n    \"paymentMethod\": \"PayPal\",\n    \"taxPrice\": 251.99,\n    \"shippingPrice\": 100,\n    \"totalPrice\": 2031.94,\n    \"isPaid\": true,\n    \"isDelivered\": true,\n    \"createdAt\": \"2022-08-04T19:06:04.032Z\",\n    \"updatedAt\": \"2023-04-18T14:24:53.782Z\",\n    \"__v\": 0,\n    \"deliveredAt\": \"2023-04-18T14:24:03.647Z\",\n    \"paidAt\": \"2023-04-18T14:24:53.779Z\"\n}"
+						},
+						{
+							"name": "updateordertopaid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/orders/62ec189cad51d897194bcf8a/pay",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"62ec189cad51d897194bcf8a",
+										"pay"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "989"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3dd-NtR3mVd1mk1xHIEjP6aqRCe0OmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 14:24:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"shippingAddress\": {\n        \"address\": \"Decagon Institute, No 7, Asajon way Sangotedo,Lagos.\",\n        \"city\": \"Benin city\",\n        \"postalCode\": 234677,\n        \"country\": \"Nigeria\"\n    },\n    \"_id\": \"62ec189cad51d897194bcf8a\",\n    \"user\": \"62ec1826ad51d897194bcf6b\",\n    \"orderItems\": [\n        {\n            \"name\": \"Logitech G-Series Gaming Mouse\",\n            \"qty\": 3,\n            \"image\": \"/images/mouse.jpg\",\n            \"price\": 49.99,\n            \"product\": \"62a4e71463a87c0602a1ece9\",\n            \"_id\": \"62ec189cad51d897194bcf8b\"\n        },\n        {\n            \"name\": \"Cannon EOS 80D DSLR Camera\",\n            \"qty\": 1,\n            \"image\": \"/images/camera.jpg\",\n            \"price\": 929.99,\n            \"product\": \"62a4e71463a87c0602a1ece7\",\n            \"_id\": \"62ec189cad51d897194bcf8c\"\n        },\n        {\n            \"name\": \"iPhone 11 Pro 256GB Memory\",\n            \"qty\": 1,\n            \"image\": \"/images/phone.jpg\",\n            \"price\": 599.99,\n            \"product\": \"62ec170ae96ce61b71691a20\",\n            \"_id\": \"62ec189cad51d897194bcf8d\"\n        }\n    ],\n    \"paymentMethod\": \"PayPal\",\n    \"taxPrice\": 251.99,\n    \"shippingPrice\": 100,\n    \"totalPrice\": 2031.94,\n    \"isPaid\": true,\n    \"isDelivered\": true,\n    \"createdAt\": \"2022-08-04T19:06:04.032Z\",\n    \"updatedAt\": \"2023-04-18T14:24:53.782Z\",\n    \"__v\": 0,\n    \"deliveredAt\": \"2023-04-18T14:24:03.647Z\",\n    \"paidAt\": \"2023-04-18T14:24:53.779Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cloudinaryimageupload",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "upload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/okpalaanayo/Desktop/iPhone14ProMax_DeepPurple_0c05c6a6-f4f9-4945-a45c-41b4b70edcac_2048x.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/api/uploads/cloud",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"uploads",
+										"cloud"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "701"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2bd-CGZP1qaYC4u3/BZBn9M8L/pfZKU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 08:31:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"asset_id\": \"9f60374f289d06b3dd3bf076904df19a\",\n    \"public_id\": \"zgujevjihgbqjq9naetw\",\n    \"version\": 1681806689,\n    \"version_id\": \"da78b2c8f6f9c91291b3ab855add32d9\",\n    \"signature\": \"b684ce50dfe0329d9d21283ea8ff2afe3313d7bc\",\n    \"width\": 1000,\n    \"height\": 1000,\n    \"format\": \"webp\",\n    \"resource_type\": \"image\",\n    \"created_at\": \"2023-04-18T08:31:29Z\",\n    \"tags\": [],\n    \"pages\": 1,\n    \"bytes\": 22680,\n    \"type\": \"upload\",\n    \"etag\": \"ca4796e6151f288576628feb9515e048\",\n    \"placeholder\": false,\n    \"url\": \"http://res.cloudinary.com/drho9mnyb/image/upload/v1681806689/zgujevjihgbqjq9naetw.webp\",\n    \"secure_url\": \"https://res.cloudinary.com/drho9mnyb/image/upload/v1681806689/zgujevjihgbqjq9naetw.webp\",\n    \"folder\": \"\",\n    \"original_filename\": \"tmp-1-1681806685580\",\n    \"api_key\": \"259753627217751\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
